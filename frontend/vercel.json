@@ -1,0 +1,43 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "build/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/build/static/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/build/favicon.ico"
+    },
+    {
+      "src": "/logo192.png",
+      "dest": "/build/logo192.png"
+    },
+    {
+      "src": "/logo512.png",
+      "dest": "/build/logo512.png"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/build/manifest.json"
+    },
+    {
+      "src": "/widget.js",
+      "dest": "/build/widget.js"
+    },
+    {
+      "src": "/widget.css",
+      "dest": "/build/widget.css"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/build/index.html"
+    }
+  ]
+} 

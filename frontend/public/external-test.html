@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>External Website Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+    header {
+      background-color: #4a6da7;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #333;
+      color: white;
+      padding: 0.5rem;
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav li {
+      margin: 0 1rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .hero {
+      background-color: #f5f5f5;
+      padding: 3rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      border-radius: 5px;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .feature {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>External Website</h1>
+    <p>This is a test website to demonstrate the Chatly widget integration</p>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <section class="hero">
+      <h2>Welcome to Our Website</h2>
+      <p>This is a sample website to test the Chatly widget integration. You should see a chat button in the bottom right corner.</p>
+    </section>
+    
+    <section class="features">
+      <div class="feature">
+        <h3>Feature 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula.</p>
+      </div>
+      <div class="feature">
+        <h3>Feature 2</h3>
+        <p>Aenean ullamcorper aliquet lorem id dapibus. Nulla eget lacinia lectus. Praesent ut feugiat lorem, eu commodo diam.</p>
+      </div>
+      <div class="feature">
+        <h3>Feature 3</h3>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam.</p>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 External Website. All rights reserved.</p>
+  </footer>
+
+  <!-- Chatly Widget Code -->
+  <script>
+    (function(w, d, s, o, f, js, fjs) {
+      w['Chatly-Widget'] = o;
+      w[o] = w[o] || function() {
+        (w[o].q = w[o].q || []).push(arguments);
+      };
+      js = d.createElement(s);
+      fjs = d.getElementsByTagName(s)[0];
+      js.id = o;
+      js.src = f;
+      js.async = 1;
+      fjs.parentNode.insertBefore(js, fjs);
+    }(window, document, 'script', 'chatly', 'http://localhost:3001/widget.js'));
+    chatly('init', { 
+      widgetId: 'c67df48d-996b-49ed-b4ee-00d80957723e', // معرف الويدجت الصحيح
+      position: 'right',
+      color: '#4a6da7',
+      welcomeMessage: 'مرحبًا! كيف يمكنني مساعدتك اليوم؟'
+    });
+  </script>
+</body>
+</html> 

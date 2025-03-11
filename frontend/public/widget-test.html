@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatly Widget Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+    .code-block {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Chatly Widget Test Page</h1>
+    <p>This page demonstrates the Chatly chat widget integration. You should see a chat button in the bottom right corner of the page.</p>
+    
+    <h2>How to Integrate the Widget</h2>
+    <p>To add the Chatly widget to your website, copy and paste the following code snippet just before the closing <code>&lt;/body&gt;</code> tag:</p>
+    
+    <div class="code-block">
+      <pre><code>&lt;script&gt;
+  (function(w, d, s, o, f, js, fjs) {
+    w['Chatly-Widget'] = o;
+    w[o] = w[o] || function() {
+      (w[o].q = w[o].q || []).push(arguments);
+    };
+    js = d.createElement(s);
+    fjs = d.getElementsByTagName(s)[0];
+    js.id = o;
+    js.src = f;
+    js.async = 1;
+    fjs.parentNode.insertBefore(js, fjs);
+  }(window, document, 'script', 'chatly', 'http://localhost:3001/widget.js'));
+  chatly('init', { widgetId: 'YOUR_WIDGET_ID' });
+&lt;/script&gt;</code></pre>
+    </div>
+    
+    <p>Replace <code>YOUR_WIDGET_ID</code> with the ID of your widget from the Chatly dashboard.</p>
+    
+    <h2>Test with a Sample Widget</h2>
+    <p>Click the button below to load a sample widget:</p>
+    
+    <button id="load-widget">Load Sample Widget</button>
+  </div>
+
+  <script>
+    document.getElementById('load-widget').addEventListener('click', function() {
+      // Create and append the widget script
+      const script = document.createElement('script');
+      script.innerHTML = `
+        (function(w, d, s, o, f, js, fjs) {
+          w['Chatly-Widget'] = o;
+          w[o] = w[o] || function() {
+            (w[o].q = w[o].q || []).push(arguments);
+          };
+          js = d.createElement(s);
+          fjs = d.getElementsByTagName(s)[0];
+          js.id = o;
+          js.src = f;
+          js.async = 1;
+          fjs.parentNode.insertBefore(js, fjs);
+        }(window, document, 'script', 'chatly', 'http://localhost:3001/widget.js'));
+        chatly('init', { 
+          widgetId: '1', // Using a sample widget ID
+          position: 'right',
+          color: '#4CAF50',
+          welcomeMessage: 'Hello! This is a test widget. How can I help you today?'
+        });
+      `;
+      document.body.appendChild(script);
+      
+      // Disable the button after clicking
+      this.disabled = true;
+      this.textContent = 'Widget Loaded';
+    });
+  </script>
+</body>
+</html> 
