@@ -12,7 +12,7 @@
   };
 
   // API endpoint - use absolute URL to avoid CORS issues
-  const API_URL = 'https://backend-9iis2kgb0-ibras-projects-1d6e8dd6.vercel.app/api';
+  const API_URL = 'https://backend-kl3qplmvj-ibras-projects-1d6e8dd6.vercel.app/api';
   
   // CSS URL - use absolute URL to avoid CORS issues
   const CSS_URL = 'https://back-ihd7klbr6-ibras-projects-1d6e8dd6.vercel.app/widget.css';
