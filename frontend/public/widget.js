@@ -15,7 +15,7 @@
   const API_URL = 'https://backend-kl3qplmvj-ibras-projects-1d6e8dd6.vercel.app/api';
   
   // CSS URL - use absolute URL to avoid CORS issues
-  const CSS_URL = 'https://back-7mp5i2fv3-ibras-projects-1d6e8dd6.vercel.app/widget.css';
+  const CSS_URL = 'https://back-ovcrc0fs9-ibras-projects-1d6e8dd6.vercel.app/widget.css';
 
   // Widget container
   let widgetContainer = null;
