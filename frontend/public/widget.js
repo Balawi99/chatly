@@ -12,10 +12,10 @@
   };
 
   // API endpoint - use absolute URL to avoid CORS issues
-  const API_URL = 'https://chatly-backend.vercel.app/api';
+  const API_URL = 'https://backend-9h5ou8dng-ibras-projects-1d6e8dd6.vercel.app/api';
   
   // CSS URL - use absolute URL to avoid CORS issues
-  const CSS_URL = 'https://chatly-frontend.vercel.app/widget.css';
+  const CSS_URL = 'https://chatly-balawi99.vercel.app/widget.css';
 
   // Widget container
   let widgetContainer = null;
